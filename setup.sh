@@ -18,12 +18,26 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
+# Link Hosting Kalian Untuk Ssh Vpn
+akbarvpn="raw.githubusercontent.com/antinsp/bonetrojan/main/ssh"
+# Link Hosting Kalian Untuk Sstp
+akbarvpnn="raw.githubusercontent.com/antinsp/bonetrojan/main/sstp"
+# Link Hosting Kalian Untuk Ssr
+akbarvpnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/ssr"
+# Link Hosting Kalian Untuk Shadowsocks
+akbarvpnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/shadowsocks"
+# Link Hosting Kalian Untuk Wireguard
+akbarvpnnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/wireguard"
 # Link Hosting Kalian Untuk Xray
 akbarvpnnnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/xray"
+# Link Hosting Kalian Untuk Ipsec
+akbarvpnnnnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/ipsec"
 # Link Hosting Kalian Untuk Backup
 akbarvpnnnnnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/backup"
 # Link Hosting Kalian Untuk Websocket
 akbarvpnnnnnnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/websocket"
+# Link Hosting Kalian Untuk Ohp
+akbarvpnnnnnnnnnn="raw.githubusercontent.com/antinsp/bonetrojan/main/ohp"
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -38,9 +52,26 @@ exit 0
 fi
 mkdir /var/lib/crot;
 echo "IP=" >> /var/lib/crot/ipvps.conf
-
+wget https://${akbarvpn}/slhost.sh && chmod +x slhost.sh && ./slhost.sh
+#install xray
+wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+#install ssh ovpn
+#wget https://${akbarvpn}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+#wget https://${akbarvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+#install ssr
+#wget https://${akbarvpnnn}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+#wget https://${akbarvpnnnn}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+#installwg
+#wget https://${akbarvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+#install L2TP
+#wget https://${akbarvpnnnnnnn}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+#wget https://${akbarvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # Websocket
 wget https://${akbarvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
+# Ohp Server
+wget https://${akbarvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+# Install SlowDNS
+wget https://raw.githubusercontent.com/antinsp/bonetrojan/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
 # Informasi IP Saya dan Semua Port TCP UDP
 # wget https://raw.githubusercontent.com/antinsp/bonetrojan/main/ipsaya.sh && chmod +x ipsaya.sh
 #
@@ -48,14 +79,24 @@ wget https://${akbarvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
 # wget https://raw.githubusercontent.com/antinsp/bonetrojan/main/grpc/sl-grpc.sh && chmod +x sl-grpc.sh && screen -S sl-grpc ./sl-grpc.sh
 # install xray grpc
 # wget https://raw.githubusercontent.com/antinsp/bonetrojan/main/grpc/xray-grpc.sh && chmod +x xray-grpc.sh && screen -S xray-grpc ./xray-grpc.sh
+# install shadowsocks plugin
+# wget https://raw.githubusercontent.com/antinsp/bonetrojan/main/shadowsocks-plugin/install-ss-plugin.sh && chmod +x install-ss-plugin.sh && ./install-ss-plugin.sh
+ 
 
-
-
+rm -f /root/ssh-vpn.sh
+rm -f /root/sstp.sh
+rm -f /root/wg.sh
+rm -f /root/ss.sh
+rm -f /root/ssr.sh
 rm -f /root/ins-xray.sh
+rm -f /root/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/edu.sh
+rm -f /root/ohp.sh
 rm -f /root/install
 rm -f /root/sl-grpc.sh
+rm -f /root/install-sldns
+rm -f /root/install-ss-plugin.sh
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
