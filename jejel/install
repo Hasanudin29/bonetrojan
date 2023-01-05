@@ -1,4 +1,4 @@
-domain='sl.kereaktif.tk'
+domain='kop.kereaktif.tk'
 
 mkdir /etc/trojan-go
 cd /etc/trojan-go
