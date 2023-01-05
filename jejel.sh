@@ -12,9 +12,9 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 
-MYIP='103.191.92.89';
+MYIP='103.23.199.61';
 clear
-domain='go.kereaktif.tk'
+domain='mod.kereaktif.tk'
 apt install iptables iptables-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
