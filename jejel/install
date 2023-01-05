@@ -4,7 +4,10 @@ mkdir /etc/trojan-go
 cd trojan-go
 wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.10.6/trojan-go-linux-amd64.zip
 unzip trojan-go-linux-amd64.zip
-wget https://github.com/antinsp/bonetrojan/blob/main/jejel/config.json
+
+#buatconfig
+cat > /etc/trojan-go/config.json << END
+
 curl https://get.acme.sh | sh
 ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh
 acme.sh --set-default-ca --server letsencrypt
