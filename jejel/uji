@@ -5,7 +5,7 @@ cd /etc/trojan-go
 wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.10.6/trojan-go-linux-amd64.zip
 unzip trojan-go-linux-amd64.zip
 
-#buatconfig
+# buatconfig
 cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
