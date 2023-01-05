@@ -1,0 +1,13 @@
+domain='sl.kereaktif.tk'
+
+mkdir /etc/trojan-go
+cd trojan-go
+wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.10.6/trojan-go-linux-amd64.zip
+unzip trojan-go-linux-amd64.zip
+wget https://github.com/antinsp/bonetrojan/blob/main/jejel/config.json
+curl https://get.acme.sh | sh
+ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh
+acme.sh --set-default-ca --server letsencrypt
+acme.sh --issue -d $domain --standalone -k ec-256 --webroot /home/wwwroot/html
+acme.sh --install-cert -d $domain --ecc --key-file /etc/trojan-go/server.key --fullchain-file /etc/trojan-go/server.crt
+apt install nginx -y
