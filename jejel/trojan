@@ -12,6 +12,20 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 
+clear
+read -rp "Domain kamu : " -e domen
+cat > domain << END
+$domen
+END
+clear
+cd /etc
+mkdir xray
+cp domain /etc/xray/domain
+echo "domain berhasil diganti"
+sleep 2
+echo "lanjutttttt"
+sleep 3
+
 MYIP="103.183.75.113";
 clear
 domain=$(cat /etc/xray/domain)
