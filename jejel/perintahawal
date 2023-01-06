@@ -1,7 +1,9 @@
+apt update -y && apt install curl -y && apt install wget -y && apt install unzip -y && apt install perl -y && apt install socat -y && update-grub
+
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 gema "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
+wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/antinsp/bonetrojan/main/vpsroot.sh && bash vpsroot.sh
 
-apt update -y && apt install curl -y && apt install wget -y && apt install unzip -y && apt install perl -y && apt install socat -y && update-grub
-
-  wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/antinsp/bonetrojan/main/vpsroot.sh && bash vpsroot.sh
+instalasinya
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/trojan && chmod +x trojan && ./trojan
