@@ -111,13 +111,11 @@ cat > /etc/trojan-go/config.json << END
   }
 
 }
-
 END 
 
 # / / Installation Xray Service
 
 cat > /etc/nginx/nginx.conf << END
-
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
