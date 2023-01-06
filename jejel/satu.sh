@@ -120,7 +120,7 @@ http {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    server_name jembut.kereaktif.tk;
+    server_name $domain;
 
  location / {
     proxy_pass https://www.bing.com;
