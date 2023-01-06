@@ -177,6 +177,9 @@ chmod 755 /bin/ak
 chmod 755 /bin/del
 chmod 755 /bin/menu
 chmod 755 /bin/renew
+apt-get -y install vnstat
+vnstat -u -i eth0
+service vnstat restart
 
 systemctl daemon-reload 
 systemctl enable trojan-go 
