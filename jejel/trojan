@@ -20,13 +20,11 @@ END
 clear
 cd /etc
 mkdir xray
-cp domain /etc/xray/domain
+cp /root/domain /etc/xray/domain
 echo "domain berhasil diganti"
 sleep 2
 echo "lanjutttttt"
-sleep 3
-
-MYIP="103.183.75.113";
+sleep 2
 clear
 domain=$(cat /etc/xray/domain)
 apt install iptables iptables-persistent -y
@@ -498,8 +496,8 @@ $uuid
 END
 
 # restart
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2086 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
@@ -512,3 +510,22 @@ systemctl restart trojan-go
 
 cd
 cp /root/domain /etc/xray
+
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/ak
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/del
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/menu
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
+mv ak /bin/ak
+mv del /bin/del
+mv menu /bin/menu
+mv renew /bin/renew
+
+apt-get -y install vnstat
+vnstat -u -i eth0
+service vnstat restart
+
+systemctl daemon-reload 
+systemctl enable trojan-go 
+systemctl start trojan-go
+systemctl restart trojan-go.service
+systemctl status trojan-go
