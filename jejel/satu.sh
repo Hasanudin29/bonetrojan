@@ -21,7 +21,7 @@ acme.sh --set-default-ca --server letsencrypt
 acme.sh --issue -d $domain --standalone -k ec-256 --webroot /home/wwwroot/html
 acme.sh --install-cert -d $domain --ecc --key-file /etc/trojan-go/server.key --fullchain-file /etc/trojan-go/server.crt
 apt install nginx -y
-domain=$(cat domain)
+
 # Installing Trojan Go Service
 cat > /etc/trojan-go/config.json << END
 {
