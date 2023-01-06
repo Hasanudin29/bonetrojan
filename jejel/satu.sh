@@ -6,7 +6,7 @@ END
 clear
 echo "domain berhasil diganti"
 sleep 5
-lanjutttttt
+echo 'lanjutttttt"
 sleep 3
 
 domain=$(cat domain)
