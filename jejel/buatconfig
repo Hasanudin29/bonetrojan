@@ -1,6 +1,5 @@
 domain=$(cat domain)
 cat > /etc/trojan-go/config.json << END
-
 {
 
   "run_type": "server",
@@ -111,9 +110,7 @@ cat > /etc/trojan-go/config.json << END
 
   }
 
-}
-
-END 
+} END 
 
 # / / Installation Xray Service
 
@@ -175,7 +172,6 @@ http {
 #		proxy      on;
 #	}
 #}
-
 END 
 
 systemctl reload nginx 
@@ -212,7 +208,6 @@ RestartPreventExitStatus=23
 [Install]
 
 WantedBy=multi-user.target
-
 END
 
 systemctl daemon-reload 
