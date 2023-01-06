@@ -112,8 +112,8 @@ cat > /etc/trojan-go/config.json << END
   }
 
 }
+
 END 
-rm /etc/nginx/nginx.conf
 
 # / / Installation Xray Service
 
@@ -175,6 +175,7 @@ http {
 #		proxy      on;
 #	}
 #}
+
 END 
 
 systemctl reload nginx 
@@ -211,6 +212,7 @@ RestartPreventExitStatus=23
 [Install]
 
 WantedBy=multi-user.target
+
 END
 
 systemctl daemon-reload 
