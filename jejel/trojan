@@ -531,7 +531,7 @@ chmod 755 /bin/restart
 apt-get -y install vnstat
 vnstat -u -i eth0
 service vnstat restart
-
+apt install speedtest.cli -y
 systemctl daemon-reload 
 systemctl enable trojan-go 
 systemctl start trojan-go
