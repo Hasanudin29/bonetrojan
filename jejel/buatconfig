@@ -1,5 +1,5 @@
 domain=$(cat domain)
-cat > /etc/xray/config.json << END
+cat > /etc/trojan-go/config.json << END
 
 {
 
@@ -113,6 +113,7 @@ cat > /etc/xray/config.json << END
 
 }
 END 
+rm /etc/nginx/nginx.conf
 
 # / / Installation Xray Service
 
