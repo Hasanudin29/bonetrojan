@@ -1,8 +1,4 @@
 domain=$(cat domain)
-rm /etc/nginx/nginx.conf
-
-# / / Installation Xray Service
-
 cat > /etc/nginx/nginx.conf << END
 
 user www-data;
