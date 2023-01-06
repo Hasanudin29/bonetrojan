@@ -1,4 +1,4 @@
-domain='jembut.kereaktif.tk'
+domain=$(cat /etc/domain)
 
 mkdir /etc/trojan-go
 cd /etc/trojan-go
