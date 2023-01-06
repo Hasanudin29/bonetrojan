@@ -1,60 +1,34 @@
 domain=$(cat domain)
-cat > /etc/nginx/nginx.conf << END
+# / / Installationsystemed
 
-user www-data;
-worker_processes auto;
-pid /run/nginx.pid;
-include /etc/nginx/modules-enabled/*.conf;
+cat > /etc/systemd/system/trojan-go.service << END
 
-events {
-	worker_connections 768;
-	# multi_accept on;
-}
+[Unit]
 
-http {
+Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
 
- server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+Documentation=https://github.com/p4gefau1t/trojan-go
 
-    server_name $domain;
+After=network.target nss-lookup.target
 
- location / {
-    proxy_pass https://www.bing.com;
-    proxy_ssl_server_name on;
-    proxy_redirect off;
-    sub_filter_once off;
-    sub_filter "www.bing.com" $server_name;
-    proxy_set_header Host "www.bing.com";
-    proxy_set_header Referer $http_referer;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header User-Agent $http_user_agent;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto https;
-    proxy_set_header Accept-Encoding "";
-    proxy_set_header Accept-Language "zh-CN";
-    }
-  }
-}
+Wants=network-online.target
 
-#mail {
-#	# See sample authentication script at:
-#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
-# 
-#	# auth_http localhost/auth.php;
-#	# pop3_capabilities "TOP" "USER";
-#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
-# 
-#	server {
-#		listen     localhost:110;
-#		protocol   pop3;
-#		proxy      on;
-#	}
-# 
-#	server {
-#		listen     localhost:143;
-#		protocol   imap;
-#		proxy      on;
-#	}
-#}
-END 
+[Service]
+
+Type=simple
+
+User=root
+
+ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/config.json
+
+Restart=on-failure
+
+RestartSec=10
+
+RestartPreventExitStatus=23
+
+[Install]
+
+WantedBy=multi-user.target
+
+END
