@@ -1,3 +1,14 @@
+clear
+read -rp "Domain kamu : " -e domen
+cat > domain << END
+$domen
+END
+clear
+echo "domain berhasil diganti"
+sleep 5
+lanjutttttt
+sleep 3
+
 domain=$(cat domain)
 
 mkdir /etc/trojan-go
