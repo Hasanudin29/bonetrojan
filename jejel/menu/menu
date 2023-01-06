@@ -26,7 +26,7 @@ renew
 ;;
 4)
 clear
-refresh
+restart
 ;;
 5)
 clear
