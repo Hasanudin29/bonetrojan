@@ -162,6 +162,20 @@ http {
 #}
 END
 
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/ak
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/del
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/menu
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
+mv ak /bin/ak
+mv del /bin/del
+mv menu /bin/menu
+mv renew /bin/renew
+
+chmod 755 /bin/ak
+chmod 755 /bin/del
+chmod 755 /bin/menu
+chmod 755 /bin/renew
+
 systemctl daemon-reload 
 systemctl enable trojan-go 
 systemctl start trojan-go
