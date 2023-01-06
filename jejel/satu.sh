@@ -31,7 +31,9 @@ cat > /etc/trojan-go/config.json << END
   "remote_addr": "127.0.0.1",
   "remote_port": 80,
   "password": [
-       "antonbos"
+      ""
+,"testing"
+,"antonbos"
   ],
   "disable_http_check": false,
   "udp_timeout": 60,
