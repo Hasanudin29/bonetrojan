@@ -31,4 +31,4 @@ done
 systemctl restart trojan-go
 
 waktune=$(date);
-echo "berhasil hapus user exp " $waktune >> jajalan;
+echo "berhasil hapus user exp " $waktune >> log-expired-akun;
