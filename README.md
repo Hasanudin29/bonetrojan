@@ -9,11 +9,20 @@ atau
 * • Ubuntu 18.04 & 20.04
 * Working For VPS AWS,AZURE,DO
 ## Installation 
+## 0.
+<img src="https://img.shields.io/badge/Update%20_&_%20Upgrade-green">
+
+  ```html
+apt update -y && apt install curl -y && apt install wget -y && apt install unzip -y && apt install perl -y && apt install socat -y && update-grub
+```
+  
 ## 1.
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade-green">
 
   ```html
-apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+gema "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
 ```
   
 ## 2.0
