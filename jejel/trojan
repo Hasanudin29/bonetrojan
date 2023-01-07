@@ -544,6 +544,7 @@ chmod 755 /bin/restart_cron
 chmod 755 /bin/xp
 chmod 755 /bin/xp_cron
 chmod 755 /bin/reboot_vps
+chmod 755 /etc/systemd/system/trojan-go.service
 
 
 apt-get -y install vnstat
