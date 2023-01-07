@@ -1,3 +1,3 @@
 waktune=$(date);
-echo "berhasil restart trojan-go " $waktune >> log-restart-trojan;
+echo "berhasil reboot vps" $waktune >> log-reboot-vps;
 30 4 * * * root reboot
