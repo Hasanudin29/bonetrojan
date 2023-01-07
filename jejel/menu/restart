@@ -18,4 +18,4 @@ sleep 2
 systemctl restart trojan-go
 echo -e "Restart All Service Berhasil"
 waktune=$(date);
-echo "berhasil restart trojan-go " $waktune >> log-expired-akun;
+echo "berhasil restart trojan-go " $waktune >> log-restart-trojan;
