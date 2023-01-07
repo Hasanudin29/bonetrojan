@@ -1,1 +1,1 @@
-0 */1 * * * /usr/bin/restart
+0 */1 * * * root /usr/bin/restart
