@@ -18,6 +18,8 @@ cat > domain << END
 $domen
 END
 clear
+mv /etc/localtime /etc/localtime.bak
+ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 cd /etc
 mkdir xray
 cp /root/domain /etc/xray/domain
