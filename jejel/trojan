@@ -522,7 +522,8 @@ mv ak /bin/ak
 mv del /bin/del
 mv menu /bin/menu
 mv renew /bin/renew
-mv renew /bin/restart
+mv restart /bin/restart
+
 chmod 755 /bin/ak
 chmod 755 /bin/del
 chmod 755 /bin/menu
