@@ -518,17 +518,21 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/del
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/menu
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
 mv ak /bin/ak
 mv del /bin/del
 mv menu /bin/menu
 mv renew /bin/renew
 mv restart /bin/restart
+mv xp /bin/xp
 
 chmod 755 /bin/ak
 chmod 755 /bin/del
 chmod 755 /bin/menu
 chmod 755 /bin/renew
 chmod 755 /bin/restart
+chmod 755 /bin/xp
+
 apt-get -y install vnstat
 vnstat -u -i eth0
 service vnstat restart
