@@ -13,7 +13,7 @@ atau
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade-green">
 
   ```html
-apt update -y && apt install curl -y && apt install wget -y && apt install unzip -y && apt install perl -y && apt install socat -y && apt upgrade -y&& update-grub
+apt update -y && apt install curl -y && apt install wget -y && apt install unzip -y && apt install perl -y && apt install socat -y && apt upgrade -y && update-grub
 ```
   
 ## 1.
