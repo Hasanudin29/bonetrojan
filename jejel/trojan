@@ -544,8 +544,9 @@ chmod 755 /etc/cron.d/restart_cron
 chmod 755 /bin/xp
 chmod 755 /etc/cron.d/xp_cron
 chmod 755 /etc/cron.d/reboot_vps
-chmod 755 /etc/systemd/system/trojan-go.service
-
+chmod 777 /etc/systemd/system/trojan-go.service
+chmod 777 /etc/systemd/system/xray.service
+chmod 777 /etc/systemd/system/rc-local.service
 
 apt-get -y install vnstat
 service vnstat restart
