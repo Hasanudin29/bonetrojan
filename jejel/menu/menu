@@ -9,8 +9,10 @@ echo -e "$yy 2$y.  Hapus Akun Trojan GO$wh"
 echo -e "$yy 3$y.  Perpanjang Akun Trojan GO"
 echo -e "$yy 4$y.  Restart Trojan GO"
 echo -e "$yy 5$y.  Reboot VPS"
+echo -e "$yy 5$y.  Reboot VPS"
+echo -e "$yy 6$y.  Ganti Domain"
 echo -e "$y-------------------------------------------------$wh"
-read -p "Select From Options [ 1 - 5 ] : " menu
+read -p "Select From Options [ 1 - 6 ] : " menu
 case $menu in
 1)
 clear
@@ -31,6 +33,10 @@ restart
 5)
 clear
 reboot
+;;
+6)
+clear
+addhost
 ;;
 *)
 clear
