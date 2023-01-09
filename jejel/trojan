@@ -554,6 +554,8 @@ chmod 777 /etc/systemd/system/trojan-go.service
 chmod 777 /etc/systemd/system/xray.service
 chmod 777 /etc/systemd/system/rc-local.service
 
+cd /var/lib
+mkdir crot
 touch /var/lib/crot/ipvps.conf
 
 apt-get -y install vnstat
