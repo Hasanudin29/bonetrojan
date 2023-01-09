@@ -12,8 +12,8 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-MYIP=$(cat domain);
-domain=$(cat domain)
+MYIP=$(cat /etc/xray/domain);
+domain=$(cat /etc/xray/domain)
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		read -rp "Password : " -e user
 		user_EXISTS=$(grep -w $user /etc/trojan-go/akun.conf | wc -l)
