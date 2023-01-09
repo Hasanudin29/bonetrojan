@@ -20,9 +20,7 @@ apt update -y && apt install curl -y && apt install wget -y && apt install unzip
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade-green">
 
   ```html
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-gema "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p
+rm -f setup.sh && apt update && apt upgrade -y && update-grub && sleep 2 && apt-get update -y && apt-get upgrade && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip
 ```
   
 ## 2.
