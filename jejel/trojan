@@ -524,7 +524,9 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/certv2ray
 
+mv certv2ray /bin/certv2ray
 mv ak /bin/ak
 mv del /bin/del
 mv menu /bin/menu
@@ -536,6 +538,7 @@ mv xp_cron /etc/cron.d/xp_cron
 mv reboot_vps /etc/cron.d/reboot_vps
 
 chmod 755 /bin/ak
+chmod 755 /bin/certv2ray
 chmod 755 /bin/del
 chmod 755 /bin/menu
 chmod 755 /bin/renew
