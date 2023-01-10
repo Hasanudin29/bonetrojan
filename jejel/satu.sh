@@ -195,7 +195,7 @@ mv del /bin/del
 mv menu /bin/menu
 mv renew /bin/renew
 mv restart /bin/restart
-#mv restart_cron /etc/cron.d/restart_cron
+# mv restart_cron /etc/cron.d/restart_cron
 mv xp /bin/xp
 mv xp_cron /etc/cron.d/xp_cron
 mv reboot_vps /etc/cron.d/reboot_vps
