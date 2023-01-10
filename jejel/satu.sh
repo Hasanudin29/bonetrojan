@@ -11,6 +11,9 @@ sleep 3
 
 domain=$(cat domain)
 
+
+mkdir /etc/xray
+cp /root/domain /etc/xray/domain
 mkdir /etc/trojan-go
 cd /etc/trojan-go
 wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.10.6/trojan-go-linux-amd64.zip
@@ -176,18 +179,51 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/ak
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/del
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/menu
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart_cron
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps_script
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/certv2ray
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/addhost
+
+mv certv2ray /bin/certv2ray
+mv addhost /bin/addhost
 mv ak /bin/ak
 mv del /bin/del
 mv menu /bin/menu
 mv renew /bin/renew
+mv restart /bin/restart
+#mv restart_cron /etc/cron.d/restart_cron
+mv xp /bin/xp
+mv xp_cron /etc/cron.d/xp_cron
+mv reboot_vps /etc/cron.d/reboot_vps
+mv reboot_vps_script /bin/reboot_vps_script
+
 
 chmod 755 /bin/ak
+chmod 755 /bin/addhost
+chmod 755 /bin/certv2ray
 chmod 755 /bin/del
 chmod 755 /bin/menu
 chmod 755 /bin/renew
+chmod 755 /bin/restart
+#chmod 755 /etc/cron.d/restart_cron
+chmod 755 /bin/xp
+chmod 755 /etc/cron.d/xp_cron
+chmod 755 /etc/cron.d/reboot_vps
+chmod 755 /bin/reboot_vps_script
+
+
+cd /var/lib
+mkdir crot
+touch /var/lib/crot/ipvps.conf
+
 apt-get -y install vnstat
 vnstat -u -i eth0
 service vnstat restart
+apy install speedtest.cli -y
 
 systemctl daemon-reload 
 systemctl enable trojan-go 
