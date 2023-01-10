@@ -22,28 +22,34 @@ acme.sh --issue -d $domain --standalone -k ec-256 --webroot /home/wwwroot/html
 acme.sh --install-cert -d $domain --ecc --key-file /etc/trojan-go/server.key --fullchain-file /etc/trojan-go/server.crt
 apt install nginx -y
 
-# Installing Trojan Go Service
+cd /etc/trojan-go
+touh /etc/trojan-go/trojan-go.log
+
+# Buat Config Trojan Go
 cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
   "local_port": 443,
   "remote_addr": "127.0.0.1",
-  "remote_port": 80,
+  "remote_port": 89,
+  "log_level": 1,
+  "log_file": "/etc/trojan-go/trojan-go.log",
   "password": [
       ""
 ,"testing"
 ,"antonbos"
   ],
-  "disable_http_check": false,
+  "disable_http_check": true,
   "udp_timeout": 60,
   "ssl": {
-    "verify": true,
-    "verify_hostname": true,
+    "verify": false,
+    "verify_hostname": false,
     "cert": "/etc/trojan-go/server.crt",
     "key": "/etc/trojan-go/server.key",
-    "cipher": " ",
-    "curves": " ",
+    "key_password": "",
+    "cipher": "",
+    "curves": "",
     "prefer_server_cipher": false,
     "sni": "$domain",
     "alpn": [
@@ -51,35 +57,37 @@ cat > /etc/trojan-go/config.json << END
     ],
     "session_ticket": true,
     "reuse_session": true,
-    "plain_http_response": " ",
+    "plain_http_response": "",
     "fallback_addr": "127.0.0.1",
-    "fallback_port": 80,
+    "fallback_port": 0,
     "fingerprint": "firefox"
   },
   "tcp": {
     "no_delay": true,
     "keep_alive": true,
-    "prefer_ipv4": false
+    "prefer_ipv4": true
   },
   "mux": {
-    "enabled": true,
+    "enabled": false,
     "concurrency": 8,
     "idle_timeout": 60
-  },
-  "router": {
-    "enabled": false,
-    "bypass": [ ],
-    "proxy": [ ],
-    "block": [ ],
-    "default_policy": "proxy",
-    "domain_strategy": "as_is",
-    "geoip": "/etc/trojan-go/geoip.dat",
-    "geosite": "/etc/trojan-go/geosite.dat"
   },
   "websocket": {
     "enabled": true,
     "path": "/trojan",
     "host": "$domain"
+  },
+    "api": {
+    "enabled": false,
+    "api_addr": "",
+    "api_port": 0,
+    "ssl": {
+      "enabled": false,
+      "key": "",
+      "cert": "",
+      "verify_client": false,
+      "client_cert": []
+    }
   }
 }
 END
