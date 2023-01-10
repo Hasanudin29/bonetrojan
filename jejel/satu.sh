@@ -185,7 +185,7 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps_script
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_otomatis.sh
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/certv2ray
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/addhost
 
@@ -200,7 +200,7 @@ mv restart /bin/restart
 mv xp /bin/xp
 mv xp_cron /etc/cron.d/xp_cron
 mv reboot_vps /etc/cron.d/reboot_vps
-mv reboot_vps_script /bin/reboot_vps_script
+
 
 
 chmod 755 /bin/ak
@@ -214,7 +214,7 @@ chmod 755 /bin/restart
 chmod 755 /bin/xp
 chmod 755 /etc/cron.d/xp_cron
 chmod 755 /etc/cron.d/reboot_vps
-chmod 755 /bin/reboot_vps_script
+chmod 755 /root/reboot_otomatis.sh
 
 
 cd /var/lib
