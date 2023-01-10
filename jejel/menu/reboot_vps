@@ -1,1 +1,1 @@
-30 4 * * * root /usr/bin/reboot_vps_script
+30 4 * * * root /root/reboot_otomatis.sh
