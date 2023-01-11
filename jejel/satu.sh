@@ -109,12 +109,31 @@ Type=simple
 User=root
 ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/config.json
 Restart=on-failure
-RestartSec=10
-RestartPreventExitStatus=23
+LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
 END
+
+cat > /etc/systemd/system/trojan-go@.service << END
+[Unit]
+Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
+Documentation=https://github.com/p4gefau1t/trojan-go
+After=network.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/%i.json
+Restart=on-failure
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
+END
+
+
 
 # Installing nginx
 cat > /etc/nginx/nginx.conf << END
@@ -221,9 +240,21 @@ cd /var/lib
 mkdir crot
 touch /var/lib/crot/ipvps.conf
 
-apt-get -y install vnstat
-vnstat -u -i eth0
-service vnstat restart
+apt install build-essential gcc make libsqlite3-dev -y
+wget https://humdi.net/vnstat/vnstat-2.8.tar.gz
+tar -xvzf vnstat-2.8.tar.gz
+cd vnstat-2.8
+./configure --prefix=/usr --sysconfdir=/etc
+make
+make install
+cp -v examples/systemd/vnstat.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable vnstat
+systemctl start vnstat
+systemctl unmask vnstat
+systemctl enable vnstat
+systemctl start vnstat
+
 apy install speedtest.cli -y
 
 systemctl daemon-reload 
