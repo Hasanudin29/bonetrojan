@@ -97,7 +97,6 @@ cat > /etc/trojan-go/config.json << END
 END
 
 # Installing Trojan Go Service
-cat > /etc/systemd/system/trojan-go.service << END
 [Unit]
 Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
 Documentation=https://github.com/p4gefau1t/trojan-go
