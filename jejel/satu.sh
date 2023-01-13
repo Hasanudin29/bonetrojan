@@ -216,6 +216,7 @@ mv restart /bin/restart
 mv xp /bin/xp
 mv xp_cron /etc/cron.d/xp_cron
 mv reboot_vps /etc/cron.d/reboot_vps
+mv reboot_otomatis.sh /root/reboot_otomatis.sh
 
 chmod 755 /bin/ak
 chmod 755 /bin/addhost
