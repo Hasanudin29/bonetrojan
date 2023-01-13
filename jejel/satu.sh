@@ -201,7 +201,7 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart_cron
+#wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_otomatis.sh
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/certv2ray
@@ -232,7 +232,7 @@ chmod 755 /bin/restart
 chmod 755 /bin/xp
 chmod 755 /etc/cron.d/xp_cron
 chmod 755 /etc/cron.d/reboot_vps
-chmod 755 /root/reboot_otomatis.sh
+chmod 755 reboot_otomatis.sh
 
 
 cd /var/lib
