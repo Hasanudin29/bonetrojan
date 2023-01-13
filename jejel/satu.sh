@@ -239,26 +239,9 @@ cd /var/lib
 mkdir crot
 touch /var/lib/crot/ipvps.conf
 
-apt install build-essential gcc make libsqlite3-dev -y
-wget https://humdi.net/vnstat/vnstat-2.8.tar.gz
-tar -xvzf vnstat-2.8.tar.gz
-cd vnstat-2.8
-./configure --prefix=/usr --sysconfdir=/etc
-make
-make install
-cp -v examples/systemd/vnstat.service /etc/systemd/system/
-systemctl daemon-reload
-systemctl enable vnstat
-systemctl start vnstat
-systemctl unmask vnstat
-systemctl enable vnstat
-systemctl start vnstat
-
 apy install speedtest.cli -y
 
 systemctl daemon-reload 
 systemctl enable trojan-go 
 systemctl start trojan-go
 systemctl status trojan-go
-
-
