@@ -96,7 +96,6 @@ cat > /etc/trojan-go/config.json << END
 }
 END
 
-# Installing Trojan Go Service
 cat > /etc/systemd/system/trojan-go.service << END
 [Unit]
 Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
@@ -203,7 +202,6 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
-#wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_otomatis.sh
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/certv2ray
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/addhost
 
@@ -218,8 +216,6 @@ mv xp /bin/xp
 mv xp_cron /etc/cron.d/xp_cron
 mv reboot_vps /etc/cron.d/reboot_vps
 
-
-
 chmod 755 /bin/ak
 chmod 755 /bin/addhost
 chmod 755 /bin/certv2ray
@@ -230,7 +226,6 @@ chmod 755 /bin/restart
 chmod 755 /bin/xp
 chmod 755 /etc/cron.d/xp_cron
 chmod 755 /etc/cron.d/reboot_vps
-#chmod 755 reboot_otomatis.sh
 
 
 cd /var/lib
