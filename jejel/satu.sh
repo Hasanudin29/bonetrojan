@@ -250,7 +250,7 @@ systemctl unmask vnstat
 systemctl enable vnstat
 systemctl start vnstat
 
-apy install speedtest.cli -y
+apt install speedtest.cli -y
 
 systemctl daemon-reload 
 systemctl enable trojan-go 
