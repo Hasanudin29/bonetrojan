@@ -1,0 +1,58 @@
+#!/bin/bash
+# SL
+# ==========================================
+# Color
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+# ==========================================
+# Getting
+MYIP=$(cat domain);
+clear
+
+# Hapus Akun trojan go 
+
+data=( `cat /etc/trojan-go/akun.conf | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/trojan-go/akun.conf" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp$/d" /etc/trojan-go/akun.conf
+sed -i '/^,"'"$user"'"$/d' /etc/trojan-go/config.json
+fi
+done
+systemctl restart trojan-go
+
+# Hapus Akun Xray
+data=( `cat /etc/xray/akun.conf | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/akun.conf" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp$/d" /etc/xray/akun.conf
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
+rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
+fi
+done
+systemctl restart trojan-go
+
+
+
+
+
+
+waktune=$(date);
+echo "berhasil hapus user exp " $waktune >> log-expired-akun;
