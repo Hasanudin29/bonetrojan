@@ -1,3 +1,9 @@
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/clearlog
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/clearlog_cron
+mv clearlog /bin/clearlog
+mv clearlog_cron /etc/cron.d/clearlog_cron
+chmod 755 /bin/clearlog
+
 cd /usr/bin
 rm -r menu
 wget -O menu "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/menu"
@@ -6,6 +12,7 @@ wget -O cekv2ray "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jeje
 wget -O addv2ray "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/vmess/addv2ray.sh"
 wget -O delv2ray "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/vmess/delv2ray.sh"
 wget -O renewv2ray "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/vmess/renewv2ray.sh"
+
 
 chmod +x menu
 chmod +x cektrojan
