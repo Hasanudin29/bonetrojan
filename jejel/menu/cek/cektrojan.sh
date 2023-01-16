@@ -24,7 +24,7 @@ exit 0
 fi
 clear
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2`);
+data=( `cat /etc/trojan-go/akun.conf | grep '###' | cut -d ' ' -f 2`);
 echo "-----------------------------------------";
 echo "---------=[ Trojan User Login ]=---------";
 echo "-----------------------------------------";
@@ -34,10 +34,10 @@ if [[ -z "$akun" ]]; then
 akun="tidakada"
 fi
 echo -n > /tmp/iptrojan.txt
-data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep xray | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
+data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep trojan-go | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
 for ip in "${data2[@]}"
 do
-jum=$(cat /var/log/xray/access.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
+jum=$(cat /var/log/trojan-go/trojan-go.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
 if [[ "$jum" = "$ip" ]]; then
 echo "$jum" >> /tmp/iptrojan.txt
 else
