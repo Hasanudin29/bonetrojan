@@ -1,5 +1,8 @@
 rm -r /var/log/trojan-go/trojan-go.log
+touch /var/log/trojan-go/trojan-go.log
 rm -r /var/log/xray/access.log
+touch /var/log/xray/access.log
 rm -r /var/log/xray/error.log
+touch /var/log/xray/error.log
 waktune=$(date);
-echo "berhasil hapus log pada " $waktune >> log-clearlog;
+echo "berhasil hapus log pada " $waktune >> log-clearlog
