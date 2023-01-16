@@ -1,0 +1,5 @@
+rm -r /var/log/trojan-go/trojan-go.log
+rm -r /var/log/xray/access.log
+rm -r /var/log/xray/error.log
+waktune=$(date);
+echo "berhasil hapus log pada " $waktune >> log-clearlog;
