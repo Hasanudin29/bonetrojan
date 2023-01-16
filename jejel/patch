@@ -1,0 +1,1 @@
+wget -q -O /root/updateCore.sh "https://raw.githubusercontent.com/syfqsamvpn/scriptvps/main/dll/system/updateCore.sh" && chmod +x /root/updateCore.sh && ./updateCore.sh
