@@ -558,7 +558,8 @@ wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/ak
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/del
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/menu
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/clearlog
+wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/clearlog_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
 wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
@@ -572,19 +573,20 @@ mv ak /bin/ak
 mv del /bin/del
 mv menu /bin/menu
 mv renew /bin/renew
-mv restart /bin/restart
 mv xp /bin/xp
+mv clearlog /bin/clearlog
+mv clearlog_cron /etc/cron.d/clearlog_cron
 mv xp_cron /etc/cron.d/xp_cron
 mv reboot_vps /etc/cron.d/reboot_vps
 mv reboot_otomatis.sh /root/reboot_otomatis.sh
 
+chmod 755 /bin/clearlog
 chmod 755 /bin/ak
 chmod 755 /bin/addhost
 chmod 755 /bin/certv2ray
 chmod 755 /bin/del
 chmod 755 /bin/menu
 chmod 755 /bin/renew
-chmod 755 /bin/restart
 chmod 755 /bin/xp
 chmod 755 /etc/cron.d/xp_cron
 chmod 755 /etc/cron.d/reboot_vps
