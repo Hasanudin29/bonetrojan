@@ -589,6 +589,18 @@ chmod 755 /etc/cron.d/xp_cron
 chmod 755 /etc/cron.d/reboot_vps
 chmod 755 /root/reboot_otomatis.sh
 
+cd /usr/bin
+wget -O install-sldns "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/cek/cektrojan.sh"
+wget -O install-sldns "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/cek/cekv2ray.sh"
+wget -O install-sldns "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/vmess/addv2ray.sh"
+wget -O install-sldns "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/vmess/delv2ray.sh"
+wget -O install-sldns "https://raw.githubusercontent.com/antinsp/bonetrojan/main/jejel/menu/vmess/renewv2ray.sh"
+
+chmod +x cektrojan
+chmod +x cekv2ray
+chmod +x addv2ray
+chmod +x delv2ray
+chmod +x renewv2ray
 
 cd /var/lib
 mkdir crot
