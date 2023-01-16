@@ -11,8 +11,10 @@ echo -e "$yy 4$y.  Buat Akun VMESS $wh"
 echo -e "$yy 5$y.  Hapus Akun VMESS $wh"
 echo -e "$yy 6$y.  Perpanjang VMESS$wh"
 echo -e "$yy 7$y.  Restart Trojan GO$wh"
-echo -e "$yy 8$y.  Reboot VPS$wh"
-echo -e "$yy 9$y.  Ganti Domain$wh"
+echo -e "$yy 8$y.  Cek Trojan$wh"
+echo -e "$yy 9$y.  Cek VMESS$wh"
+echo -e "$yy 10$y.  Reboot VPS$wh"
+echo -e "$yy 11$y.  Ganti Domain$wh"
 echo -e "$y-------------------------------------------------$wh"
 read -p "Select From Options [ 1 - 6 ] : " menu
 case $menu in
@@ -46,9 +48,17 @@ restart
 ;;
 8)
 clear
-reboot
+cektrojan
 ;;
 9)
+clear
+cekv2ray
+;;
+10)
+clear
+reboot
+;;
+11)
 clear
 addhost
 ;;
