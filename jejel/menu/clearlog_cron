@@ -1,1 +1,1 @@
-58 12 * * * root /usr/bin/clearlog
+28 4 * * * root /usr/bin/clearlog
