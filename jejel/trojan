@@ -624,7 +624,9 @@ systemctl unmask vnstat
 systemctl enable vnstat
 systemctl start vnstat
 
-apt install speedtest.cli -y
+apt-get install curl
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash
+apt-get install speedtest
 
 systemctl daemon-reload 
 systemctl enable trojan-go 
