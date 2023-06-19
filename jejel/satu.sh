@@ -194,17 +194,17 @@ http {
 #}
 END
 
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/ak
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/del
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/menu
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/renew
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/restart
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/xp_cron
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_vps
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/reboot_otomatis.sh
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/certv2ray
-wget https://raw.github.com/antinsp/bonetrojan/main/jejel/menu/addhost
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/ak
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/del
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/menu
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/renew
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/restart
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/xp
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/xp_cron
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/reboot_vps
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/reboot_otomatis.sh
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/certv2ray
+wget https://raw.github.com/Hasanudin29/bonetrojan/main/jejel/menu/addhost
 
 mv certv2ray /bin/certv2ray
 mv addhost /bin/addhost
